@@ -34,3 +34,24 @@
   </tbody>
 </table>
 </template>
+<script>
+const axios = require("axios").default;
+export default {
+  data() {
+    return {
+      student: {
+        fname: "",
+        lname: "",
+        sname: "",
+        regno: "",
+        program: "",
+      },
+    };
+  },
+  mounted(){
+      axios.get("http://localhost:3000/user").then(function (response) {
+          console.log(response);
+        })
+    }
+};
+</script>

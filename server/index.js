@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../myapp/build')));
 
 mongoose.connect("mongodb://localhost:27017/studentDB", {useNewUrlParser: true});
 
@@ -35,7 +35,6 @@ app.get('/user', (req, res)=>{
 });
 
 app.post("/user", (req, res)=>{
-
     const newUser = new User({
     firstname: req.body.first,
     middlename: req.body.middle,
